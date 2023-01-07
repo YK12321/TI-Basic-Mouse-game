@@ -1,0 +1,155 @@
+Lbl theta:ClrHome:5->theta:5->Y:13->X:0.1->G:1->L:Output(Y,X,"plotsquare"):Output(2,24,"[]")
+Lbl 0:Repeat K!=0:getKey->K:End:
+Output(10,20,"HP: "):
+If L!=0:Then:
+Output(10,26,theta):Else:
+Output(10,24,"INF"):End
+If theta<1:Then:
+	ClrHome:Output(5,5,"0 HP"):Wait 2:Goto theta
+End
+If L>=4:Then:
+If K=24 and X!=1:Then:Output(Y,X," "):Output(Y,X-1,"plotsquare"):X-1->X:DelVar K:End:
+If K=26 and X!=26:Then:Output(Y,X," ":Output(Y,X+1,"plotsquare"):X+1->X:DelVar K:End:
+If K=25 and Y!=1:Then:Output(Y,X," "):Output(Y-1,X,"plotsquare"):Y-1->Y:DelVar K:End:
+If K=34 and Y!=10:Then:Output(Y,X," "):Output(Y+1,X,"plotsquare"):Y+1->Y:DelVar K:End:
+End
+If L<=3:Then:
+If K=24:Then:Output(Y,X," "):Output(Y,X-1,"plotsquare"):X-1->X:DelVar K:End:
+If K=26:Then:Output(Y,X," ":Output(Y,X+1,"plotsquare"):X+1->X:DelVar K:End:
+If K=25:Then:Output(Y,X," "):Output(Y-1,X,"plotsquare"):Y-1->Y:DelVar K:End:
+If K=34:Then:Output(Y,X," "):Output(Y+1,X,"plotsquare"):Y+1->Y:DelVar K:End:
+End
+If L=0:Then:
+If K=21:Then:B+1->B:G/B->G:End:
+If K=31:Then:0.1->G:DelVar B:End:
+If K=82:Then:0->Z:Output(Y,X,"+"):For(Z,0,X-2,1):Output(Y,X-1-Z,"-"):Wait G:Output(Y,X-Z," "):Output(Y,X,"+"):End:DelVar Z:Output(Y,X,"plotsquare"):End:
+If K=73:Then:0->Z:Output(Y,X,"+"):For(Z,0,Y-2,1):Output(Y-1-Z,X,"I"):Wait G:Output(Y-Z,X," "):Output(Y,X,"+"):End:DelVar Z:Output(Y,X,"plotsquare"):End:
+If K=84:Then:0->Z:Output(Y,X,"+"):For(Z,0,25-X,1):Output(Y,X+1+Z,"-"):Wait G:Output(Y,X+Z," "):Output(Y,X,"+"):End:DelVar Z:Output(Y,X,"plotsquare"):End:
+If K=93 and L=0:Then:0->Z:Output(Y,X,"+"):For(Z,0,9-Y,1):Output(Y+1+Z,X,"I"):Wait G:Output(Y+Z,X," "):Output(Y,X,"+"):End:DelVar Z:Output(Y,X,"plotsquare"):End:
+End
+If K=45:Then:5->Y:13->X:ClrHome:Output(Y,X,"plotsquare"):End:
+
+If K=105:Then:Goto Q:End
+If L=1 and X>=24 and Y=2:Then:ClrHome:2->L:Output(5,5,"LEVEL COMPLETE"):DelVar Z:Repeat Z!=0:getKey->Z:End:DelVar Z:ClrHome:Output(5,3,"LEVEL 2"):Repeat Z!=0:getKey->Z:End:DelVar Z:1->C:9->Y:1->X:End
+Lbl L\2
+If L=2 and C=1:Then:DelVar C:ClrHome:Output(2,2,"----------------------[]"):Output(4,3,"-----------------------"):Output(6,2,"-----------------------"):Output(Y,X,"plotsquare"):End
+If L=2:Then:
+If X<=23 and Y=2:Then:9->Y:2->X:1->C:theta-1->theta:ClrHome:Goto L\2:End:If X>=3 and Y=4:Then:9->Y:2->X:1->C:theta-1->theta:ClrHome:Goto L\2:End:If X<=24 and Y=6:Then:9->Y:2->X:1->C:theta-1->theta:ClrHome:Goto L\2:End:
+If L=2 and X>=24 and Y=2:Then:ClrHome:3->L:Output(5,5,"LEVEL COMPLETE"):DelVar Z:Repeat Z!=0:getKey->Z:End:DelVar Z:ClrHome:Output(5,3,"LEVEL 3"):Repeat Z!=0:getKey->Z:End:DelVar Z:1->C:End:End
+Lbl L\3
+If L=3 and C=1:Then:DelVar C:ClrHome:Output(2,24,"[]"):Output(3,5,"^"):Output(2,5,">>>>>>>>>>"):Output(3,17-10,"V<<<<<<<<<<<<"):Output(4,2,"--- ------------- ------"):Output(5,2,"     I"):Output(6,2,"- ---- --------- -------"):Output(7,2,"  I       I      I"):Output(8,2,"------  ---   ==>[-]<\==-"):9->Y:2->X:Output(Y,X,"plotsquare"):End
+If L=3:Then:
+	If Y=4:Then:
+		If X>=2 and X<=4:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=6 and X<=18:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=20:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+	End
+	If Y=5:Then:
+		If X=7:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+	End
+	If Y=6:Then:
+		If X=2:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=4 and X<=7:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=9 and X<=17:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=19:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+	End
+	If Y=7:Then:
+		If X=4:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X=12:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X=19:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+	End
+	If Y=8:Then:
+		If X>=2 and X<=7:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=10 and X<=12:Then:
+		2->X:9->Y:1->C:theta-1->theta:Goto L\3:End
+		If X>=16 and X<=24:Then:
+	2->X:9->Y:0->theta:DelVar C:DelVar L:ClrHome:Output(5,5,"LEVELS LOST!"):Output(6,1,"PRESS ANY BUTTON (NOT ON)"):DelVar Z:Repeat Z!=0:getKey->Z:End:ClrHome:1->L:Output(2,24,"[]"):End
+		If X=25:Then:
+		2->X:9->Y:1->C:Goto L\3:End
+	End
+	If Y=3:Then:
+		If X=19:Then:
+		X-13->X:Y+1->Y:Output(3,19,"<"):Output(Y,X,"plotsquare"):End:
+		If X=5:Then:
+	Y-1->Y:Output(3,5,"^"):Output(Y,X,"plotsquare"):End:End
+	If Y=2:Then:
+		If X=5:Then:
+		X+(24-X-1)->X:Output(2,5,">>>>>>>>>"):Output(Y,X,"plotsquare"):Output(2,5,">>>>>>>>>"):End
+		If X=24 or X=25:Then:ClrHome:
+	4->L:Output(5,5,"LEVEL COMPLETE"):DelVar Z:Repeat Z!=0:getKey->Z:End:DelVar Z:ClrHome:Output(5,3,"LEVEL 4"):Repeat Z!=0:getKey->Z:End:DelVar Z:1->C:9->Y:1->X:
+:End:End:End
+Lbl L\4
+If L=4 and C=1:Then:
+DelVar C:DelVar B:ClrHome:Output(1,25,"[]"):Output(2,1,"--------------------------"):Output(3,1," [-][-][-][^][-][-][-][-] "):Output(4,1,"XXXXXXXXXXXXXXVXXXXXXXXXXX":Output(5,5,"(^^o)"):Output(6,1,"-I-I-I-I-I-I-I-I-I-I-I-I-I"):Output(7,5,"(^^o)"):Output(8,1," --     ------------------"):Output(9,4,"-----"):10->Y:1->X:Output(Y,X,"plotsquare"):End
+If L=4:Then:
+	If Y=9:Then:
+		If X>=4 and X<=8:Then:
+		1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+	End
+	If Y=8:Then:
+		If X>=2 and X<=3:Then:
+		1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+		If X>=9 and X<=26:Then:
+		1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+	End
+	If Y=7:Then:
+		If X=5 or X=7:Then
+		1->X:10->Y:1->C:theta-1->theta:Goto L\4:End:
+		If X=6:Then:
+		DelVar B:Y+1->Y:Output(Y,X,"plotsquare"):Output(7,6,"!"):1->B:Output(6,1," -       - - - - - - - - -"):End
+	End
+	If Y=6:Then:
+		If B=1 and B!=2:Then:
+			If X=2 or X=10 or X=12 or X=14 or X=16 or X=18 or X=20 or X=22 or X=24 or X=26:Then:
+			1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+		End
+		If B!=1 and B!=2:Then:
+		1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+		If B=2 and B!=1:Then:
+			If X!=6 and X!=5 and X!=4 and X!=7 and X!=8:Then:
+			1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+	End:End:
+	If Y=5:Then:
+		If X=5 or X=7:Then:
+		1->X:10->Y:1->C:theta-1->theta:Goto L\4:End:
+		If X=6:Then:
+		DelVar B:Y+1->Y:Output(Y,X,"plotsquare"):Output(5,6,"!"):2->B:Output(6,1,"---     ------------------"):Output(4,1,"                          "):Output(Y,X,"plotsquare"):End:
+	End
+	If Y=4:Then:
+		If B!=2:Then:
+		1->X:10->Y:1->C:Goto L\4:Else
+		End:
+	End
+	If Y=3:Then:
+		If X!=12:Then:
+			1->X:10->Y:1->C:theta-1->theta:Goto L\4:
+	Else:Y-2->Y:Output(Y,X,"plotsquare"):Output(3,12,"^"):End
+	End
+	If Y=2:Then:
+	1->X:10->Y:1->C:theta-1->theta:Goto L\4:End
+End
+If Y=1:Then:
+	If X>=25:Then:
+	DelVar B:DelVar L:DelVar C:DelVar Z:ClrHome:Output(3,1,"YOU WIN!"):Output(4,1,"(YOU GOT SUPERPOWERS)"):Output(5,1,"(USE THEM BY PRESSINS 2, 4, 6, 8. TO CHANGE SPEED, PRESS 2ND OR ALPHA). (PRESS ENTER TO QUIT GAME)"):Repeat Z!=0:getKey->Z:End:ClrHome:45->K:
+	End
+End
+If L<=3:Then:
+If Y<=1:Then:2->Y:For(A,0,24,1):Output(1,1+A," "):End:DelVar A:Output(Y,X,"plotsquare"):End
+If Y>=10:Then:9->Y:For(A,0,24,1):Output(10,1+A," "):End:DelVar A:Output(Y,X,"plotsquare"):End:
+If X<=1:Then:2->X:For(A,0,9,1):Output(1+A,1," "):End:DelVar A:Output(Y,X,"plotsquare"):End:
+If X>=26:Then:25->X:For(A,0,9,1):Output(1+A,26," "):End:DelVar A:Output(Y,X,"plotsquare"):End:
+End
+Goto 0
+Lbl Q:ClrHome:Disp "MADE BY YK ":"MOUSE VERSION 0.0.1 ~ YK "->Str0
